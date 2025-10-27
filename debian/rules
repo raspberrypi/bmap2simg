@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_CFLAGS_MAINT_APPEND = -Wall -pedantic
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+%:
+	dh $@ --buildsystem=cargo
+
+override_dh_auto_install:
+	dh_auto_install
+	# Install man page from build output directory
+	install -d debian/bmap2simg/usr/share/man/man1
+	find target -name "bmap2simg.1" -exec install -m 644 {} debian/bmap2simg/usr/share/man/man1/ \;

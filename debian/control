@@ -1,0 +1,24 @@
+Source: bmap2simg
+Section: utils
+Priority: optional
+Maintainer: Richard Oliver <richard.oliver@raspberrypi.com>
+Build-Depends: debhelper-compat (= 13),
+	       dh-cargo (>= 25),
+	       librust-clap-mangen-dev,
+	       librust-openssl-dev,
+	       librust-quick-xml-dev,
+	       librust-zerocopy-derive-dev
+Standards-Version: 4.7.2
+Homepage: https://raspberrypi.com/software
+Vcs-Git: https://github.com/raspberrypi/bmap2simg.git
+Vcs-Browser: https://github.com/raspberrypi/bmap2simg
+Rules-Requires-Root: no
+
+Package: bmap2simg
+Architecture: any
+Built-Using: ${cargo:Built-Using}
+Static-Built-Using: ${cargo:Static-Built-Using}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: convert bmap images to sparse
+ This utility converts disk images that have been supplied with bmap sparse
+ information to the Android sparse format.

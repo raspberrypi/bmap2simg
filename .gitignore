@@ -1,0 +1,31 @@
+# Rust build artifacts
+/target/
+Cargo.lock
+
+# Debian packaging artifacts
+/debian/.debhelper/
+/debian/bmap2simg/
+/debian/bmap2simg.substvars
+/debian/cargo_home/
+/debian/cargo_out_dir
+/debian/cargo_registry/
+/debian/debhelper-build-stamp
+*.debhelper.log
+/debian/files
+.cargo-checksum.json
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

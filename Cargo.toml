@@ -1,0 +1,19 @@
+[package]
+name = "bmap2simg"
+description = "Convert bmap images to Android sparse"
+homepage = "https://raspberrypi.com/software"
+repository = "https://github.com/raspberrypi/bmap2simg"
+version = "0.1.0"
+license = "BSD-3-Clause"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+openssl = "0.10.72"
+quick-xml = { version = "0.36.1", features = ["serialize"] }
+serde = { version = "1.0.217", features = ["derive"] }
+zerocopy = { version = "0.7", features = ["derive"] }
+
+[build-dependencies]
+clap = { version = "4.5", features = ["derive"] }
+clap_mangen = "0.2.20"
