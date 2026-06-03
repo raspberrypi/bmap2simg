@@ -18,6 +18,14 @@ Build the package in a dedicated chroot:
 gbp buildpackage
 ```
 
+To build for a specific CPU architecture:
+```bash
+gbp buildpackage --arch=arm64
+```
+Note: this is not cross-compilation — a chroot is prepared for the architecture
+you request and qemu-user emulation is used (`qemu-user` package) if this does
+not match your host architecture; arch-native tools are always used for builds.
+
 The build artifacts can be found in the ../build-area directory.
 
 ### Incremental Builds
